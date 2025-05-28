@@ -1,5 +1,5 @@
 
--- Müşteri tablosu
+
 CREATE TABLE Musteri (
     MusteriID INT PRIMARY KEY,
     Ad VARCHAR(50),
@@ -7,14 +7,14 @@ CREATE TABLE Musteri (
     Telefon VARCHAR(20)
 );
 
--- Ürün tablosu
+
 CREATE TABLE Urun (
     UrunID INT PRIMARY KEY,
     UrunAdi VARCHAR(100),
     Fiyat DECIMAL(10,2)
 );
 
--- Sipariş tablosu
+
 CREATE TABLE Siparis (
     SiparisID INT PRIMARY KEY,
     MusteriID INT,
@@ -22,7 +22,7 @@ CREATE TABLE Siparis (
     FOREIGN KEY (MusteriID) REFERENCES Musteri(MusteriID)
 );
 
--- Sipariş Detay tablosu
+
 CREATE TABLE SiparisDetay (
     SiparisDetayID INT PRIMARY KEY,
     SiparisID INT,
@@ -32,7 +32,7 @@ CREATE TABLE SiparisDetay (
     FOREIGN KEY (UrunID) REFERENCES Urun(UrunID)
 );
 
--- Örnek veriler
+
 INSERT INTO Musteri VALUES (1, 'Ayşe', 'Yılmaz', '05001234567');
 INSERT INTO Musteri VALUES (2, 'Mehmet', 'Demir', '05007654321');
 
